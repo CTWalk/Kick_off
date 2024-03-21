@@ -1,5 +1,6 @@
-Chainable Methods
- Locator Methods: Methods that return a `Locator` object can be chained with other `Locator` methods. These include methods to refine or filter locators, such as `.locator()` , `.nth()` ,`.first()` , `.last()` ,and `.filter()`. Because these methods return a new `Locator` object, we can contiune chaining with methods that operate on or further refine locators.
+# Chainable Methods
+ ##Locator Methods: 
+ Methods that return a `Locator` object can be chained with other `Locator` methods. These include methods to refine or filter locators, such as `.locator()` , `.nth()` ,`.first()` , `.last()` ,and `.filter()`. Because these methods return a new `Locator` object, we can contiune chaining with methods that operate on or further refine locators.
 
 
 ```javascript
