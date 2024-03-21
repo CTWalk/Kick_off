@@ -1,1 +1,8 @@
+Playwright itself can not interact with Excel files directly, but there's one popular library for working with Excel files in Node.js libraries, called `xlsx`
 
+
+```javascript
+npm install xlsx
+```
+
+//Read data from an Excel file
