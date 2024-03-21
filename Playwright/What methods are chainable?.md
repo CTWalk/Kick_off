@@ -18,6 +18,7 @@ await page.locator('button').click();
 const isVisible = await page.locator('.some-element').isVisible();
 ```
 
+# Summing up
  ## Return Type:
  If a method retuns a `Locator`, we can chain further `Locator` methods. If it returns anything else, chaining `Locator` methods directly after is not applicable.
 
