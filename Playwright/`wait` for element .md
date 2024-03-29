@@ -1,3 +1,5 @@
+## Element-specific waits in Playwright
+
 Playwright provides powerful methods to ensure elements are in the desired state before actions are taken. Here's a streamlined guide to element-specific waits in Playwright
 
 ### waitForSelector
@@ -32,4 +34,6 @@ const container = await page.$('text="menu_parent_text"');
 // Within that container, wait for a child element with the specified visible text to be visible.
 await container.waitForSelector('text="menu_child_text"', { state: 'visible' });
 ````
+
+The $ function is a shorthand for `page.querySelector` in the Playwright API. It selects the first element matching the given selector string within the page. When using $ on an elementHandle (which represents an element), it searches for a child element that matches the given selector within that parent element.
 
