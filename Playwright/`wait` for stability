@@ -1,0 +1,21 @@
+## Wait For System Stability
+
+Playwright provides several wait mechanisms that are more focused on overall page state, navigation, and network activities. We can use it for waiting for the application to reach a stable state after performing actions like navigation, form submissions, or any other operations that might lead to a change in the page content or state.
+
+### Waiting for Navigation
+
+Wait for navigation to complete after clicking a link or button. It's useful for scenarios where clicking a link or button leads to a new page.
+````javascript
+await Promise.all([
+  page.waitForNavigation(), // Waits for the next navigation to finish
+  page.click('a#someLink') // Triggers the navigation
+]);
+````
+
+### waitForLoadState
+
+The`'networkidle'` state is particularly useful for waiting until there are no more than 2 network connections for at least 500ms, indicating that most of the resources have been loaded.
+````javascript
+await page.goto('https://example.com');
+await page.waitForLoadState('networkidle');
+````
