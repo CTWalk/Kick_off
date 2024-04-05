@@ -8,7 +8,7 @@ Wait for navigation to complete after clicking a link or button. It's useful for
 ````javascript
 await Promise.all([
   page.waitForNavigation(), // Waits for the next navigation to finish
-  page.click('a#someLink') // Triggers the navigation
+  page.click('a[href="https://www.example.com"]') // Triggers the navigation
 ]);
 ````
 
@@ -19,3 +19,16 @@ The`'networkidle'` state is particularly useful for waiting until there are no m
 await page.goto('https://example.com');
 await page.waitForLoadState('networkidle');
 ````
+
+
+### waitForResponse and waitForRequest
+
+These method are useful for testing applications with significant backend interactions.
+````javascript
+// Wait for a specific request
+await page.waitForRequest(request => request.url().includes('/api/data') && request.method() === 'GET');
+
+// Wait for a specific response
+await page.waitForResponse(response => response.url().includes('/api/data') && response.status() === 200);
+````
+use `includes()` to check for a specific part of the URL that identifies the request or response we're interested in. 
